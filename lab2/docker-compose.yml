@@ -1,0 +1,19 @@
+# Альтернатива Homebrew: MongoDB + Redis у Docker.
+# Запуск:  docker compose up -d      Зупинка:  docker compose down
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: lab2-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7.4
+    container_name: lab2-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo-data:

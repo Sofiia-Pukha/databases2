@@ -1,0 +1,650 @@
+{
+  "10000": {
+    "storage": {
+      "SQL (12 таблиць)": {
+        "data_mb": 24.6,
+        "index_mb": 13.8
+      },
+      "PostgreSQL JSONB": {
+        "data_mb": 23.0,
+        "index_mb": 20.5
+      },
+      "MongoDB": {
+        "data_mb": 7.2,
+        "index_mb": 1.7
+      }
+    },
+    "tests": {
+      "T1": {
+        "SQL (3 запити)": {
+          "median_ms": 4.512,
+          "p95_ms": 5.239,
+          "mean_ms": 4.113,
+          "ops_per_s": 243.2,
+          "n": 1000,
+          "rows": 1
+        },
+        "SQL (1 запит)": {
+          "median_ms": 3.32,
+          "p95_ms": 4.676,
+          "mean_ms": 3.23,
+          "ops_per_s": 309.6,
+          "n": 1000,
+          "rows": 1
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.12,
+          "p95_ms": 0.255,
+          "mean_ms": 0.143,
+          "ops_per_s": 7012.3,
+          "n": 1000,
+          "rows": 1
+        },
+        "MongoDB": {
+          "median_ms": 0.346,
+          "p95_ms": 0.38,
+          "mean_ms": 0.349,
+          "ops_per_s": 2869.0,
+          "n": 1000,
+          "rows": 1
+        }
+      },
+      "T2": {
+        "SQL (3 запити)": {
+          "median_ms": 15.0,
+          "p95_ms": 18.583,
+          "mean_ms": 14.851,
+          "ops_per_s": 67.3,
+          "n": 200,
+          "rows": 25
+        },
+        "SQL (1 запит)": {
+          "median_ms": 7.912,
+          "p95_ms": 9.213,
+          "mean_ms": 7.805,
+          "ops_per_s": 128.1,
+          "n": 200,
+          "rows": 25
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 2.017,
+          "p95_ms": 5.803,
+          "mean_ms": 2.782,
+          "ops_per_s": 359.5,
+          "n": 200,
+          "rows": 25
+        },
+        "MongoDB": {
+          "median_ms": 2.178,
+          "p95_ms": 3.741,
+          "mean_ms": 2.439,
+          "ops_per_s": 410.0,
+          "n": 200,
+          "rows": 25
+        }
+      },
+      "T5": {
+        "SQL (3 запити)": {
+          "median_ms": 26.942,
+          "p95_ms": 27.736,
+          "mean_ms": 27.087,
+          "ops_per_s": 36.9,
+          "n": 5,
+          "rows": 60
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 95.437,
+          "p95_ms": 96.029,
+          "mean_ms": 95.483,
+          "ops_per_s": 10.5,
+          "n": 5,
+          "rows": 60
+        },
+        "MongoDB": {
+          "median_ms": 153.833,
+          "p95_ms": 158.416,
+          "mean_ms": 154.738,
+          "ops_per_s": 6.5,
+          "n": 5,
+          "rows": 60
+        }
+      },
+      "T6": {
+        "SQL (3 запити)": {
+          "median_ms": 1.214,
+          "p95_ms": 1.89,
+          "mean_ms": 1.32,
+          "ops_per_s": 757.4,
+          "n": 50,
+          "rows": 11
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 1.4,
+          "p95_ms": 2.96,
+          "mean_ms": 1.627,
+          "ops_per_s": 614.7,
+          "n": 50,
+          "rows": 11
+        },
+        "MongoDB": {
+          "median_ms": 0.795,
+          "p95_ms": 1.145,
+          "mean_ms": 0.854,
+          "ops_per_s": 1171.3,
+          "n": 50,
+          "rows": 11
+        }
+      },
+      "T7": {
+        "SQL (3 запити)": {
+          "median_ms": 26.103,
+          "p95_ms": 50.055,
+          "mean_ms": 29.734,
+          "ops_per_s": 33.6,
+          "n": 50,
+          "rows": 20
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.86,
+          "p95_ms": 0.916,
+          "mean_ms": 0.826,
+          "ops_per_s": 1210.2,
+          "n": 50,
+          "rows": 20
+        },
+        "MongoDB": {
+          "median_ms": 1.884,
+          "p95_ms": 2.579,
+          "mean_ms": 1.967,
+          "ops_per_s": 508.3,
+          "n": 50,
+          "rows": 20
+        }
+      },
+      "T3": {
+        "SQL (3 запити)": {
+          "median_ms": 0.108,
+          "p95_ms": 0.277,
+          "mean_ms": 0.137,
+          "ops_per_s": 7283.7,
+          "n": 500,
+          "rows": 0
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.326,
+          "p95_ms": 0.485,
+          "mean_ms": 0.343,
+          "ops_per_s": 2913.6,
+          "n": 500,
+          "rows": 0
+        },
+        "MongoDB": {
+          "median_ms": 1.899,
+          "p95_ms": 2.574,
+          "mean_ms": 1.895,
+          "ops_per_s": 527.8,
+          "n": 500,
+          "rows": 0
+        }
+      },
+      "T4": {
+        "SQL (3 запити)": {
+          "median_ms": 0.47,
+          "p95_ms": 1.733,
+          "mean_ms": 0.886,
+          "ops_per_s": 1129.3,
+          "n": 3,
+          "rows": 0
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 1505.878,
+          "p95_ms": 1568.72,
+          "mean_ms": 1513.853,
+          "ops_per_s": 0.7,
+          "n": 3,
+          "rows": 0
+        },
+        "MongoDB": {
+          "median_ms": 215.69,
+          "p95_ms": 274.954,
+          "mean_ms": 233.881,
+          "ops_per_s": 4.3,
+          "n": 3,
+          "rows": 0
+        }
+      }
+    }
+  },
+  "50000": {
+    "storage": {
+      "SQL (12 таблиць)": {
+        "data_mb": 121.3,
+        "index_mb": 67.8
+      },
+      "PostgreSQL JSONB": {
+        "data_mb": 114.5,
+        "index_mb": 87.9
+      },
+      "MongoDB": {
+        "data_mb": 63.8,
+        "index_mb": 8.5
+      }
+    },
+    "tests": {
+      "T1": {
+        "SQL (3 запити)": {
+          "median_ms": 5.245,
+          "p95_ms": 8.004,
+          "mean_ms": 5.464,
+          "ops_per_s": 183.0,
+          "n": 1000,
+          "rows": 1
+        },
+        "SQL (1 запит)": {
+          "median_ms": 3.435,
+          "p95_ms": 5.189,
+          "mean_ms": 3.628,
+          "ops_per_s": 275.7,
+          "n": 1000,
+          "rows": 1
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.786,
+          "p95_ms": 1.226,
+          "mean_ms": 0.855,
+          "ops_per_s": 1170.2,
+          "n": 1000,
+          "rows": 1
+        },
+        "MongoDB": {
+          "median_ms": 1.818,
+          "p95_ms": 2.729,
+          "mean_ms": 1.856,
+          "ops_per_s": 538.8,
+          "n": 1000,
+          "rows": 1
+        }
+      },
+      "T2": {
+        "SQL (3 запити)": {
+          "median_ms": 14.301,
+          "p95_ms": 20.99,
+          "mean_ms": 14.422,
+          "ops_per_s": 69.3,
+          "n": 200,
+          "rows": 25
+        },
+        "SQL (1 запит)": {
+          "median_ms": 9.806,
+          "p95_ms": 11.263,
+          "mean_ms": 9.747,
+          "ops_per_s": 102.6,
+          "n": 200,
+          "rows": 25
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 3.748,
+          "p95_ms": 6.747,
+          "mean_ms": 4.018,
+          "ops_per_s": 248.9,
+          "n": 200,
+          "rows": 25
+        },
+        "MongoDB": {
+          "median_ms": 3.466,
+          "p95_ms": 4.527,
+          "mean_ms": 3.529,
+          "ops_per_s": 283.4,
+          "n": 200,
+          "rows": 25
+        }
+      },
+      "T5": {
+        "SQL (3 запити)": {
+          "median_ms": 84.045,
+          "p95_ms": 85.114,
+          "mean_ms": 84.037,
+          "ops_per_s": 11.9,
+          "n": 5,
+          "rows": 60
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 308.696,
+          "p95_ms": 309.466,
+          "mean_ms": 308.855,
+          "ops_per_s": 3.2,
+          "n": 5,
+          "rows": 60
+        },
+        "MongoDB": {
+          "median_ms": 726.058,
+          "p95_ms": 730.461,
+          "mean_ms": 727.048,
+          "ops_per_s": 1.4,
+          "n": 5,
+          "rows": 60
+        }
+      },
+      "T6": {
+        "SQL (3 запити)": {
+          "median_ms": 2.252,
+          "p95_ms": 3.047,
+          "mean_ms": 2.305,
+          "ops_per_s": 433.8,
+          "n": 50,
+          "rows": 49
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 4.909,
+          "p95_ms": 6.028,
+          "mean_ms": 5.025,
+          "ops_per_s": 199.0,
+          "n": 50,
+          "rows": 49
+        },
+        "MongoDB": {
+          "median_ms": 1.978,
+          "p95_ms": 2.221,
+          "mean_ms": 1.976,
+          "ops_per_s": 506.2,
+          "n": 50,
+          "rows": 49
+        }
+      },
+      "T7": {
+        "SQL (3 запити)": {
+          "median_ms": 131.27,
+          "p95_ms": 181.586,
+          "mean_ms": 139.681,
+          "ops_per_s": 7.2,
+          "n": 50,
+          "rows": 20
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.687,
+          "p95_ms": 0.894,
+          "mean_ms": 0.711,
+          "ops_per_s": 1407.1,
+          "n": 50,
+          "rows": 20
+        },
+        "MongoDB": {
+          "median_ms": 1.264,
+          "p95_ms": 1.64,
+          "mean_ms": 1.295,
+          "ops_per_s": 771.9,
+          "n": 50,
+          "rows": 20
+        }
+      },
+      "T3": {
+        "SQL (3 запити)": {
+          "median_ms": 0.227,
+          "p95_ms": 0.404,
+          "mean_ms": 0.248,
+          "ops_per_s": 4036.9,
+          "n": 500,
+          "rows": 0
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.659,
+          "p95_ms": 0.974,
+          "mean_ms": 0.682,
+          "ops_per_s": 1466.4,
+          "n": 500,
+          "rows": 0
+        },
+        "MongoDB": {
+          "median_ms": 1.803,
+          "p95_ms": 2.68,
+          "mean_ms": 1.835,
+          "ops_per_s": 545.0,
+          "n": 500,
+          "rows": 0
+        }
+      },
+      "T4": {
+        "SQL (3 запити)": {
+          "median_ms": 0.405,
+          "p95_ms": 2.307,
+          "mean_ms": 1.023,
+          "ops_per_s": 977.4,
+          "n": 3,
+          "rows": 0
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 10745.007,
+          "p95_ms": 11410.539,
+          "mean_ms": 10676.331,
+          "ops_per_s": 0.1,
+          "n": 3,
+          "rows": 0
+        },
+        "MongoDB": {
+          "median_ms": 1143.229,
+          "p95_ms": 1247.763,
+          "mean_ms": 1156.755,
+          "ops_per_s": 0.9,
+          "n": 3,
+          "rows": 0
+        }
+      }
+    }
+  },
+  "100000": {
+    "storage": {
+      "SQL (12 таблиць)": {
+        "data_mb": 242.2,
+        "index_mb": 135.2
+      },
+      "PostgreSQL JSONB": {
+        "data_mb": 229.2,
+        "index_mb": 172.1
+      },
+      "MongoDB": {
+        "data_mb": 132.2,
+        "index_mb": 16.9
+      }
+    },
+    "tests": {
+      "T1": {
+        "SQL (3 запити)": {
+          "median_ms": 5.409,
+          "p95_ms": 7.854,
+          "mean_ms": 5.544,
+          "ops_per_s": 180.4,
+          "n": 1000,
+          "rows": 1
+        },
+        "SQL (1 запит)": {
+          "median_ms": 3.544,
+          "p95_ms": 5.246,
+          "mean_ms": 3.679,
+          "ops_per_s": 271.8,
+          "n": 1000,
+          "rows": 1
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.9,
+          "p95_ms": 1.305,
+          "mean_ms": 0.904,
+          "ops_per_s": 1106.7,
+          "n": 1000,
+          "rows": 1
+        },
+        "MongoDB": {
+          "median_ms": 1.486,
+          "p95_ms": 2.468,
+          "mean_ms": 1.588,
+          "ops_per_s": 629.6,
+          "n": 1000,
+          "rows": 1
+        }
+      },
+      "T2": {
+        "SQL (3 запити)": {
+          "median_ms": 20.028,
+          "p95_ms": 127.684,
+          "mean_ms": 33.906,
+          "ops_per_s": 29.5,
+          "n": 200,
+          "rows": 25
+        },
+        "SQL (1 запит)": {
+          "median_ms": 17.551,
+          "p95_ms": 43.451,
+          "mean_ms": 20.506,
+          "ops_per_s": 48.8,
+          "n": 200,
+          "rows": 25
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 3.096,
+          "p95_ms": 7.865,
+          "mean_ms": 4.109,
+          "ops_per_s": 243.3,
+          "n": 200,
+          "rows": 25
+        },
+        "MongoDB": {
+          "median_ms": 3.768,
+          "p95_ms": 4.691,
+          "mean_ms": 3.798,
+          "ops_per_s": 263.3,
+          "n": 200,
+          "rows": 25
+        }
+      },
+      "T5": {
+        "SQL (3 запити)": {
+          "median_ms": 162.142,
+          "p95_ms": 162.462,
+          "mean_ms": 162.11,
+          "ops_per_s": 6.2,
+          "n": 5,
+          "rows": 60
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 638.69,
+          "p95_ms": 647.716,
+          "mean_ms": 639.855,
+          "ops_per_s": 1.6,
+          "n": 5,
+          "rows": 60
+        },
+        "MongoDB": {
+          "median_ms": 1419.3,
+          "p95_ms": 1425.991,
+          "mean_ms": 1419.009,
+          "ops_per_s": 0.7,
+          "n": 5,
+          "rows": 60
+        }
+      },
+      "T6": {
+        "SQL (3 запити)": {
+          "median_ms": 2.611,
+          "p95_ms": 3.146,
+          "mean_ms": 2.501,
+          "ops_per_s": 399.8,
+          "n": 50,
+          "rows": 96
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 5.959,
+          "p95_ms": 7.241,
+          "mean_ms": 6.149,
+          "ops_per_s": 162.6,
+          "n": 50,
+          "rows": 96
+        },
+        "MongoDB": {
+          "median_ms": 1.96,
+          "p95_ms": 2.339,
+          "mean_ms": 2.035,
+          "ops_per_s": 491.4,
+          "n": 50,
+          "rows": 96
+        }
+      },
+      "T7": {
+        "SQL (3 запити)": {
+          "median_ms": 224.478,
+          "p95_ms": 238.903,
+          "mean_ms": 226.956,
+          "ops_per_s": 4.4,
+          "n": 50,
+          "rows": 20
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.836,
+          "p95_ms": 0.894,
+          "mean_ms": 0.805,
+          "ops_per_s": 1242.8,
+          "n": 50,
+          "rows": 20
+        },
+        "MongoDB": {
+          "median_ms": 1.579,
+          "p95_ms": 2.115,
+          "mean_ms": 1.657,
+          "ops_per_s": 603.3,
+          "n": 50,
+          "rows": 20
+        }
+      },
+      "T3": {
+        "SQL (3 запити)": {
+          "median_ms": 0.267,
+          "p95_ms": 0.536,
+          "mean_ms": 0.324,
+          "ops_per_s": 3083.4,
+          "n": 500,
+          "rows": 0
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 0.575,
+          "p95_ms": 0.846,
+          "mean_ms": 0.581,
+          "ops_per_s": 1720.8,
+          "n": 500,
+          "rows": 0
+        },
+        "MongoDB": {
+          "median_ms": 1.677,
+          "p95_ms": 2.509,
+          "mean_ms": 1.733,
+          "ops_per_s": 576.9,
+          "n": 500,
+          "rows": 0
+        }
+      },
+      "T4": {
+        "SQL (3 запити)": {
+          "median_ms": 0.551,
+          "p95_ms": 5.207,
+          "mean_ms": 2.091,
+          "ops_per_s": 478.2,
+          "n": 3,
+          "rows": 0
+        },
+        "PostgreSQL JSONB": {
+          "median_ms": 44468.342,
+          "p95_ms": 82926.599,
+          "mean_ms": 54206.927,
+          "ops_per_s": 0.0,
+          "n": 3,
+          "rows": 0
+        },
+        "MongoDB": {
+          "median_ms": 2214.78,
+          "p95_ms": 2647.563,
+          "mean_ms": 2344.67,
+          "ops_per_s": 0.4,
+          "n": 3,
+          "rows": 0
+        }
+      }
+    }
+  }
+}

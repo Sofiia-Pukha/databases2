@@ -1,0 +1,80 @@
+# запуск: grep -v "^#" redis_lab/redis_commands.txt | redis-cli --raw
+
+FLUSHDB
+
+# 1. STRING: просте значення, лічильник, TTL
+SET university:name "Національний університет"
+GET university:name
+# лічильник переглядів профілю студента (атомарний INCR)
+INCR student:42:views
+INCR student:42:views
+INCRBY student:42:views 10
+GET student:42:views
+# сесія користувача, що "живе" 30 хвилин (TTL у секундах)
+SET session:abc123 "user_id=2;role=teacher" EX 1800
+TTL session:abc123
+# NX — записати тільки якщо ключа ще нема (простий lock)
+SET lock:schedule:G-00001 "admin" NX EX 10
+SET lock:schedule:G-00001 "teacher1" NX EX 10
+EXISTS session:abc123 lock:schedule:G-00001 nokey
+
+# 2. HASH: об'єкт з полями (картка студента)
+HSET student:42 first_name "Олена" last_name "Мельник" group "G-00042" avg_grade 87.5
+HGET student:42 last_name
+HGETALL student:42
+HINCRBYFLOAT student:42 avg_grade 0.25
+HMGET student:42 first_name group avg_grade
+HDEL student:42 group
+HEXISTS student:42 group
+
+# 3. LIST: стрічка останніх подій (черга)
+LPUSH feed:student:42 "Оцінка 95 з Бази даних"
+LPUSH feed:student:42 "Оцінка 88 з Програмування"
+LPUSH feed:student:42 "Нова олімпіада: 1 місце"
+# зберігаємо лише 50 останніх подій
+LTRIM feed:student:42 0 49
+LRANGE feed:student:42 0 -1
+LLEN feed:student:42
+RPOP feed:student:42
+
+# 4. SET: множини (хто записався на курси за вибором)
+SADD course:ml:students 1 2 3 42 77
+SADD course:web:students 3 42 99 100
+SMEMBERS course:ml:students
+SISMEMBER course:ml:students 42
+SCARD course:web:students
+# хто записався на обидва курси
+SINTER course:ml:students course:web:students
+# хто хоча б на одному
+SUNION course:ml:students course:web:students
+# тільки на ML
+SDIFF course:ml:students course:web:students
+
+# 5. SORTED SET: рейтинг студентів за середнім балом
+ZADD rating:faculty:1 91.3 "student:1" 87.5 "student:42" 95.1 "student:77" 78.0 "student:5" 99.0 "student:100"
+# топ-3 (від більшого до меншого) з балами
+ZREVRANGE rating:faculty:1 0 2 WITHSCORES
+# місце студента 42 у рейтингу (0 = перше)
+ZREVRANK rating:faculty:1 "student:42"
+ZSCORE rating:faculty:1 "student:42"
+# студент отримав нову оцінку — бал змінився
+ZINCRBY rating:faculty:1 5 "student:42"
+ZREVRANGE rating:faculty:1 0 -1 WITHSCORES
+# студенти з балом від 90 до 100 (відмінники)
+ZRANGEBYSCORE rating:faculty:1 90 100 WITHSCORES
+ZCOUNT rating:faculty:1 90 100
+
+# 6. Транзакція MULTI/EXEC
+MULTI
+HSET student:77 first_name "Тарас" avg_grade 95.1
+ZADD rating:faculty:1 95.1 "student:77"
+LPUSH feed:student:77 "Профіль оновлено"
+EXEC
+
+# 7. Пошук ключів і видалення
+SCAN 0 MATCH student:* COUNT 100
+TYPE rating:faculty:1
+EXPIRE student:42:views 60
+TTL student:42:views
+DEL lock:schedule:G-00001
+DBSIZE
